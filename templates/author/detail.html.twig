@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="card">
+
+    <h4> Prenom : {{ author.name }}</h4>
+    <h4> Nom : {{ author.firstname }}</h4>
+    <p>  Dâte de naissance :{{  author.dateofbirth }}</p>
+    <p>  Biographie : {{ author.biography }}</p>
+            <h4>News associées:</h4>
+    {% for news in author.news %}
+
+    <a href="{{ path('news') }}">{{ news.title }}</a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

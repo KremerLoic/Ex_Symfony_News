@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+
+    {% for category in category %}
+        <div class="card col-md-4">
+            <a href="{{ path('category_show',{'id':category.id}) }}"><h4>{{ category.name }}</h4></a>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+{% endblock %}

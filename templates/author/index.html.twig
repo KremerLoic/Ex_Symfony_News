@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+    {% block body %}
+    <h1>{{ controller_name }}</h1>
+    <div class="container">
+        <div class="row">
+            {% for author in authors %}
+
+                <div class="card col-md-4">
+
+                    <p>{{ author.name }} - {{ author.firstname }} :  {{ author.id }} </p>
+                    <a href="{{ path('author_show', {'id':author.id}) }}">Details</a>
+
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+        {% endblock %}

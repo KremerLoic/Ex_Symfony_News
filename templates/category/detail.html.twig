@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h3>{{ category.name }} : </h3>
+    <br/>
+    <h5>News associées : </h5>
+
+    {% for news in category.news %}
+        <p>{{ news.title }}</p>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for news in news %}
+                <div class="card">
+                    <h3>{{ news.title }} :: {{ news.id }}</h3>
+                    <img src="{{ news.imageurl }}"/>
+                    <p>{{ news.content }}</p>
+                    {%  for category in news.category %}
+                    <p>{{ category.name }}</p>
+                    {% endfor %}
+                    <a href="{{ path('news_update',{'id':news.id}) }}">Editer la news</a>
+                    <a href="{{ path('news_delete',{'id':news.id}) }}">Supprimer la news</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
